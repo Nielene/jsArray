@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="text" id="textbox" placeholder="Enter the array element">
+
+		<input type="number" id="indexbox" placeholder="Enter index here">
+		<input type="number" id="numToDelete" placeholder="How many to delete" >
+		
+		
+		<input type="button" value="push element" onclick="addElement()">
+		<input type="button" value="unshift element" onclick="beginning()">
+		<input type="button" value="pop element" onclick="removeEnd()">
+		<input type="button" value="shift element" onclick="removeStart()">
+		<input type="button" value="splice" onclick="splice()">
+
+		<input type="button" value="push prompt" onclick="Prompt()">
+
+		<input type="button" value="sorting" onclick="sorting()">
+
+
+		<script>
+			
+				var arr=[];
+			
+			function addElement(){
+				// var arr=[];
+				arr.push(document.getElementById("textbox").value.toLowerCase());
+				console.log(arr);
+			}
+
+			function beginning(){
+				arr.unshift(document.getElementById("textbox").value.toLowerCase());
+				console.log(arr);
+			}
+
+			function removeEnd(){
+				arr.pop();
+				console.log(arr);
+			}
+
+			function removeStart(){
+				arr.shift();
+				console.log(arr);
+			}
+
+				
+			function splice(){
+				var index = document.getElementById("indexbox").value.toLowerCase();
+				var number = document.getElementById("numToDelete").value.toLowerCase();
+				var element = document.getElementById("textbox").value.toLowerCase();
+
+				arr.splice(index, number, element);
+				console.log(arr);
+			}
+
+			function Prompt(){
+				var element = prompt("Enter new Array Element").toLowerCase();
+				arr.push(element);
+				console.log(arr);
+			}
+
+			function sorting(){
+				arr.sort();
+				console.log(arr);
+			}
+
+		</script>
+	</body>
+</html>
